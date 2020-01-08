@@ -1,14 +1,13 @@
-import Modules from "./allmodules"
+name = {name: "name", uimodule: true}
 
-global.allModules = Modules
-
-
-window.onload = ->
-    promises = (m.initialize() for n,m of Modules)
-    await Promise.all(promises)
-    appStartup()
-
-
-appStartup = ->
-    ## which modules shall be kickstarted?
+#region logPrintFunctions
+log = (arg) ->
+    if allModules.debugmodule.modulesToDebug["name"]?  then console.log "[name]: " + arg
     return
+#endregion
+########################################################
+name.initialize = () ->
+    log "name.initialize"
+    return    
+
+export default name
