@@ -1,13 +1,13 @@
-name = {name: "name", uimodule: true}
+##############################################################################
+#region debug
+import {createLogFunctions} from "thingy-debug"
+{log, olog} = createLogFunctions("name")
 
-#region logPrintFunctions
-log = (arg) ->
-    if allModules.debugmodule.modulesToDebug["name"]?  then console.log "[name]: " + arg
-    return
 #endregion
-########################################################
-name.initialize = () ->
-    log "name.initialize"
-    return    
 
-export default name
+############################################################
+export initialize = ->
+    log "initialize"
+    #Implement or Remove :-)
+    return
+
